@@ -25,7 +25,7 @@ io.sockets.on('connection', function (socket) {
 async.retry(
   {times: 1000, interval: 1000},
   function(callback) {
-    pg.connect('postgres://postgres@db/postgres', function(err, client, done) {
+    pg.connect('postgres://root:12345678@henrikusdb.cf4kbdfuw9lt.us-east-2.rds.amazonaws.com:5432/postgres', function(err, client, done) {
       if (err) {
         console.error("Waiting for db");
       }
